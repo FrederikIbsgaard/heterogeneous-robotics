@@ -1,0 +1,12 @@
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./setup.sh
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./setup.zsh
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./local_setup.sh
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./local_setup.bash
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./env.sh
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./cmake.lock
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./setup.bash
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./_setup_util.py
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/./local_setup.zsh
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/ibsgaard/heterogeneous-robotics/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

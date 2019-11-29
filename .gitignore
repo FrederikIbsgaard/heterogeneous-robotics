@@ -1,0 +1,8 @@
+**/build
+**/devel
+**/cmake-build-debug
+**/.idea
+.vscode/
+.catkin_tools/
+.catkin_workspace
+CoppeliaSim_Edu_V4_0_0_Ubuntu18_04/*

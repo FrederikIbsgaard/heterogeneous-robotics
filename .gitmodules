@@ -1,0 +1,6 @@
+[submodule "src/ros_bubble_rob"]
+	path = src/ros_bubble_rob
+	url = https://github.com/CoppeliaRobotics/ros_bubble_rob
+[submodule "src/sim_ros_interface"]
+	path = src/sim_ros_interface
+	url = https://github.com/CoppeliaRobotics/simExtROSInterface.git
