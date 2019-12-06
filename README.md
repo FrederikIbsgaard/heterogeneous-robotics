@@ -44,3 +44,4 @@ git submodule update --recursive
 
 catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release -DLIBPLUGIN_DIR=$COPPELIASIM_ROOT_DIR/programming/libPlugin
 ```
+    
