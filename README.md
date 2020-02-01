@@ -30,7 +30,9 @@ cd $COPPELIASIM_ROOT_DIR
 ## Installing the ROS CoppeliaRobotics interface
 
 Copy the "libsimExtROSInterface.so" from the folder "compiledRosPlugins" to the root of the CoppeliaRobotics folder.
-    
+
+
+
 ## UR interface
 ### ur_rtde
 Installation of [ur_rtde](https://sdurobotics.gitlab.io/ur_rtde/installation/installation.html#linux-ubuntu).
@@ -53,3 +55,7 @@ cmake ..
 make
 sudo make install
 ```
+### MoveIt 
+This library is used to calculate the positions of the robot.
+
+Tutorials for [MoveIt](https://ros-planning.github.io/moveit_tutorials/)
