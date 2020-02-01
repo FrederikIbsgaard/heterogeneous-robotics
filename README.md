@@ -33,7 +33,7 @@ Copy the "libsimExtROSInterface.so" from the folder "compiledRosPlugins" to the 
     
 ## UR interface
 ### ur_rtde
-Installation of [ros_bubble_rob](https://sdurobotics.gitlab.io/ur_rtde/installation/installation.html#linux-ubuntu).
+Installation of [ur_rtde](https://sdurobotics.gitlab.io/ur_rtde/installation/installation.html#linux-ubuntu).
 Dependencies.
 ```
 sudo apt-get install libboost-all-dev
