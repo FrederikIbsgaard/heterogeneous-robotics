@@ -30,21 +30,6 @@ cd $COPPELIASIM_ROOT_DIR
 ## Installing the ROS CoppeliaRobotics interface
 
 ..* Copy the "libsimExtROSInterface.so" from the folder "compiledRosPlugins" to the root of the CoppeliaRobotics folder.
-
-[//]: # ### Not needed for the newest version of CoppeliaRobotics, Only need for V-REP
-[//]: # [ROS](http://www.coppeliarobotics.com/helpFiles/en/ros1Tutorial.htm) guide.
-
-[//]: # Submodule for the ros interface, [sim_ros_interface](https://github.com/CoppeliaRobotics/simExtROSInterface).
-
-[//]: # Submodule for the ros interface example, [ros_bubble_rob](https://github.com/CoppeliaRobotics/ros_bubble_rob).
-
-[//]: # ```
-[//]: # git submodule add  https://github.com/CoppeliaRobotics/simExtROSInterface.git sim_ros_interface
-[//]: # git submodule add  https://github.com/CoppeliaRobotics/ros_bubble_rob
-[//]: # git submodule update --recursive
-
-[//]: # catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release -DLIBPLUGIN_DIR=$COPPELIASIM_ROOT_DIR/programming/libPlugin
-[//]: # ```
     
 ## UR interface
 ### ur_rtde
