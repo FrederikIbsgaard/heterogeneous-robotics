@@ -29,7 +29,7 @@ cd $COPPELIASIM_ROOT_DIR
 
 ## Installing the ROS CoppeliaRobotics interface
 
-..* Copy the "libsimExtROSInterface.so" from the folder "compiledRosPlugins" to the root of the CoppeliaRobotics folder.
+⋅⋅* Copy the "libsimExtROSInterface.so" from the folder "compiledRosPlugins" to the root of the CoppeliaRobotics folder.
     
 ## UR interface
 ### ur_rtde
