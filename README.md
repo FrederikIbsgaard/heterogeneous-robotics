@@ -27,21 +27,41 @@ cd $COPPELIASIM_ROOT_DIR
 ./coppeliaSim.sh
 ```
 
+## Installing the ROS CoppeliaRobotics interface
+
 Copy the "libsimExtROSInterface.so" from the folder "compiledRosPlugins" to the root of the CoppeliaRobotics folder.
 
-## Installing the ROS CoppeliaRobotics interface
-### Not needed for the newest version of CoppeliaRobotics, Only need for V-REP
-[ROS](http://www.coppeliarobotics.com/helpFiles/en/ros1Tutorial.htm) guide.
 
-Submodule for the ros interface, [sim_ros_interface](https://github.com/CoppeliaRobotics/simExtROSInterface).
 
-Submodule for the ros interface example, [ros_bubble_rob](https://github.com/CoppeliaRobotics/ros_bubble_rob).
-
+## UR interface
+### ur_rtde
+Installation of [ur_rtde](https://sdurobotics.gitlab.io/ur_rtde/installation/installation.html#linux-ubuntu).
+Dependencies.
 ```
-git submodule add  https://github.com/CoppeliaRobotics/simExtROSInterface.git sim_ros_interface
-git submodule add  https://github.com/CoppeliaRobotics/ros_bubble_rob
-git submodule update --recursive
-
-catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release -DLIBPLUGIN_DIR=$COPPELIASIM_ROOT_DIR/programming/libPlugin
+sudo apt-get install libboost-all-dev
+pip3 install --user pybind11
 ```
-    
+Python.
+```
+pip3 install --user ur_rtde
+```
+C++.
+```
+git clone https://gitlab.com/sdurobotics/ur_rtde.git
+cd ur_rtde
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
+### MoveIt 
+This library is used to calculate the positions of the robot.
+
+Tutorials for [MoveIt](https://ros-planning.github.io/moveit_tutorials/)
+
+This needs frankaemika:
+```
+sudo apt install ros-melodic-libfranka ros-melodic-franka-ros 
+```
+
