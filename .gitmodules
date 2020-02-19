@@ -1,3 +1,9 @@
 [submodule "src/robot_movement_interface"]
 	path = src/robot_movement_interface
 	url = https://github.com/ros-industrial/robot_movement_interface
+[submodule "src/franka_ros"]
+	path = src/franka_ros
+	url = https://github.com/frankaemika/franka_ros
+[submodule "src/universal_robot"]
+	path = src/universal_robot
+	url = https://github.com/ros-industrial/universal_robot

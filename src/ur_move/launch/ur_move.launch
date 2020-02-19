@@ -1,0 +1,14 @@
+<launch>
+    <include file="$(find ur5_e_moveit_config)/launch/demo.launch">
+
+    </include>
+
+    <node name="ur_moveit"
+        pkg="ur_move"
+        type="ur_move"
+        respawn="false" output="screen">
+    <rosparam command="load"
+              file="$(find ur5_e_moveit_config)/config/kinematics.yaml"/>
+    </node>
+    <node name="coppelia_interface" pkg="ur_move" type="coppelia_interface" />
+</launch>
