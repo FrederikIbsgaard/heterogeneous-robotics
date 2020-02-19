@@ -57,11 +57,14 @@ sudo make install
 ```
 ### MoveIt 
 This library is used to calculate the positions of the robot.
-
+```
+sudo apt-get install ros-melodic-moveit
+```
 Tutorials for [MoveIt](https://ros-planning.github.io/moveit_tutorials/)
 
-This needs frankaemika:
+This needs frankaemika and combined_robot_hw(ros-control):
 ```
 sudo apt install ros-melodic-libfranka ros-melodic-franka-ros 
+sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers
 ```
 
