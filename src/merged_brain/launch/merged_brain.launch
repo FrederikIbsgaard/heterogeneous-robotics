@@ -1,0 +1,7 @@
+<launch>
+    <node name="merged_brain" pkg="merged_brain" type="merged_brain" />
+
+    <include file="$(find ur_move)/launch/ur_move.launch"/>
+
+    <include file="$(find mir_interface)/launch/mir_interface.launch"/>
+</launch>

@@ -1,0 +1,3 @@
+<launch>
+    <node name="mir_interface" pkg="mir_interface" type="mir_interface" output="screen" />
+</launch>

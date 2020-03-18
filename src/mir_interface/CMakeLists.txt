@@ -22,6 +22,7 @@ add_service_files(
     FILES
     action.srv
     goto_point.srv
+    get_action.srv
 )
 
 ## Generate added messages and services

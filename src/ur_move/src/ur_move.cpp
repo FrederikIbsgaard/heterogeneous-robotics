@@ -6,17 +6,23 @@
 #include "ur_move/goto_point.h"
 #include "ur_move/action.h"
 #include "std_msgs/String.h"
+#include "ur_move/get_action.h"
 
-
-class Service_class
+class Coppelia_interface
 {
 public:
     ros::NodeHandle n;
     ros::Publisher pub_ur5_action = n.advertise<std_msgs::String>("/sim/ur5/action", 1000);
     ros::ServiceClient client = n.serviceClient<ur_move::q>("coppelia_interface/ur5/move_to_joint");
+    ros::ServiceClient client_ur5_get_action = n.serviceClient<ur_move::get_action>("/sim/ur5/get");
+
     std::vector<double> new_position;
     Moveit_interface moveit_interface;
-    Service_class()
+
+    geometry_msgs::Point gps;
+    bool received_msg;
+
+    Coppelia_interface()
     {
         moveit_interface.initialize_robot();
         new_position = moveit_interface.get_joint_values();
@@ -25,15 +31,27 @@ public:
     virtual bool action_service(ur_move::action::Request &req,
                      ur_move::action::Response &res)
     {
-        std_msgs::String msg;
-        msg.data = req.action;
+
+
         if (req.action == "home")
         {
+            std_msgs::String msg;
+            msg.data = req.action;
             moveit_interface.home();
             new_position = moveit_interface.get_joint_values();
             move_coppeliaSim(new_position);
+            pub_ur5_action.publish(msg);
+        } else if (req.action == "gps")
+        {
+            ur_move::get_action srv;
+            srv.request.action = req.action;
+            client_ur5_get_action.call(srv);
+            res.x = srv.response.x;
+            res.y = srv.response.y;
+            res.z = srv.response.z;
         }
-        pub_ur5_action.publish(msg);
+
+
         return true;
     }
     void move_coppeliaSim(std::vector<double> &new_pos)
@@ -54,7 +72,7 @@ public:
         move_coppeliaSim(new_position);
     }
     virtual bool goto_point(ur_move::goto_point::Request &req,
-                        ur_move::goto_point::Response &res)
+                        ur_move::goto_point::Response &res) // can måske slettes
     {
         geometry_msgs::Pose target;
         target.orientation.w = req.w;
@@ -64,6 +82,15 @@ public:
         move_to(target);
         return true;
     }
+
+    virtual void sim_gps_callback(geometry_msgs::Point msg)
+    {
+        ROS_INFO("Saving GPS");
+        gps.x = msg.x;
+        gps.y = msg.y;
+        gps.z = msg.z;
+        received_msg = true;
+    }
 };
 
 
@@ -72,16 +99,16 @@ public:
 int main(int argc, char**argv)
 {
     ros::init(argc, argv, "ur_interface");
-    ros::NodeHandle node;
+    ros::NodeHandle n;
     ros::AsyncSpinner spinner(2);
     spinner.start();
 
     //Coppelia_interface coppelia_interface;
 
-    Service_class service_class;
+    Coppelia_interface coppelia_interface;
 
-    ros::ServiceServer service_action = node.advertiseService("coppelia_interface/ur5/action", &Service_class::action_service, &service_class);
-    ros::ServiceServer service = node.advertiseService("coppelia_interface/ur5/goto_point", &Service_class::goto_point, &service_class);
+    ros::ServiceServer service_action = n.advertiseService("coppelia_interface/ur5/action", &Coppelia_interface::action_service, &coppelia_interface);
+    ros::ServiceServer service = n.advertiseService("coppelia_interface/ur5/goto", &Coppelia_interface::goto_point, &coppelia_interface);
 
     while(ros::master::check() && ros::ok());
     //ros::spin();

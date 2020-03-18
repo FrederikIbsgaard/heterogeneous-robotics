@@ -1,0 +1,8 @@
+string action
+uint8 num
+string obj_type
+---
+bool success
+float32 x
+float32 y
+float32 z

@@ -22,6 +22,7 @@
 
          // copy in the data
          msg.data.clear();
+         //msg.data.insert(msg.data.end(), q.begin(), q.end());
          msg.data.insert(msg.data.end(), q.begin(), q.end());
          pub.publish(msg);
          return true;

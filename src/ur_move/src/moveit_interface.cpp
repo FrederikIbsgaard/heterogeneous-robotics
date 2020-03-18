@@ -33,7 +33,7 @@ public:
         primitive.dimensions.resize(3);
         primitive.dimensions[0] = 2.4;
         primitive.dimensions[1] = 0.886;
-        primitive.dimensions[2] = 0.8;
+        primitive.dimensions[2] = 0.953;
 
 
         geometry_msgs::Pose box_pose;

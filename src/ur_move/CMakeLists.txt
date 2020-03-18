@@ -37,6 +37,7 @@ add_service_files(
     action.srv
     q.srv
     goto_point.srv
+    get_action.srv
 )
 
 ## Generate added messages and services
@@ -68,8 +69,8 @@ include_directories(include ${catkin_INCLUDE_DIRS}
 
 add_executable(ur_move src/ur_move.cpp)
 target_link_libraries(ur_move ${catkin_LIBRARIES})
-add_dependencies(ur_move ${catkin_LIBRARIES} ur_move_generate_messages_cpp)
+add_dependencies(ur_move ${catkin_LIBRARIES} ur_move_generate_messages_cpp ${PROJECT_NAME}_gencpp)
 
 add_executable(coppelia_interface src/coppelia_interface.cpp)
 target_link_libraries(coppelia_interface ${catkin_LIBRARIES})
-add_dependencies(coppelia_interface ${catkin_LIBRARIES} coppelia_interface_generate_messages_cpp)
+add_dependencies(coppelia_interface ${catkin_LIBRARIES} coppelia_interface_generate_messages_cpp ${PROJECT_NAME}_gencpp)

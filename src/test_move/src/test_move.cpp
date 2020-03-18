@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     ros::Publisher test_move = n.advertise<std_msgs::Float32MultiArray>("/UR5_move", 1000);
     ros::Rate loop_rate(10);
 
-    std::vector<float> q = {10.0,10.0,10.0,00.0,00.0,00.0};
+    std::vector<float> q = {40.0,90.0,50.0,10.0,-90.0,90.0};
 
     //float q[6] = {90.0,90.0,90.0,90.0,90.0,90.0};
     std_msgs::Float32MultiArray msg;
