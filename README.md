@@ -1,3 +1,13 @@
+# General ROS
+Follow ROS installarion guide
+```
+sudo apt install ros-melodic-desktop-full 
+sudo apt-get install ros-melodic-moveit-visual-tools
+sudo apt install ros-melodic-tf2-sensor-msgs
+```
+
+
+
 # Heterogeneous Robotics
 Download CoppeliaRobotics v.4.0 EDU and then export the path to the folder.
 
@@ -59,6 +69,7 @@ sudo make install
 This library is used to calculate the positions of the robot.
 ```
 sudo apt-get install ros-melodic-moveit
+sudo apt-get install ros-melodic-moveit-visual-tools
 ```
 Tutorials for [MoveIt](https://ros-planning.github.io/moveit_tutorials/)
 
